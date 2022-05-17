@@ -1,10 +1,34 @@
 body {
+  font-family: 'VT323', monospace;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-evenly;
-  height: 100vh;
+  height: 150vh;
+  background: rgb(34, 193, 195);
+  background: linear-gradient(0deg, #026a9d 0%, rgba(34, 123, 195, 1) 26%, rgba(59, 156, 203, 1) 49%, rgba(255, 255, 255, 1) 100%);
 }
+
+
+/*-------Header------------*/
+
+#header {
+  color: white;
+  font-size: 1.5em;
+  background-color: #026a9d;
+  padding: 1em;
+  padding-left: 2em;
+  padding-right: 2em;
+  border-radius: 2em;
+  border: white 0.5em solid;
+  margin-bottom: 1em;
+  margin-top: 1em;
+  max-width: 50%;
+  max-height: 5em;
+
+}
+
+
 /*------Grid Container---------*/
 .gridContainer {
   max-height: 50%;
@@ -12,40 +36,81 @@ body {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
   grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
-  border: gray 1px solid;
+  border: white 0.5em solid;
+  border-radius: 5px;
 }
 
 .cell {
   background-color: lightgray;
   width: 50px;
   height: 50px;
-  
+
   border: gray 1px solid;
 }
 
 
 /*---------------Color Display------------*/
-.colorEditor{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+.colorEditor {
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  padding: 2em;
+  border-radius: 0.5em;
+  border: darkgrey 0.5em solid;
+  width: 46vw;
 }
 
-#colorHeader{
-    text-align: center;
+#colorHeader {
+  text-align: center;
 }
 
 /* color buttons  */
-#buttonDisplay{
-    display: flex;
-    flex-direction: row;
-    width: 50vw;
+#buttonDisplay {
+  display: flex;
+  flex-direction: row;
+  width: 50vw;
 }
 
-#displayColors{
-    display: flex;
-    justify-content: space-around;
-    width: 40vw;
+#displayColors {
+  display: flex;
+  flex-direction: row;
+  align-content: center;
+  justify-content: center;
+  width: 15vw;
+  padding-bottom: 0%;
+}
+
+#colorRow1 {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+#colorRow2 {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+h2 {
+  background-color: #026a9d;
+  color: white;
+  padding: 0.5em;
+  margin-bottom: 0;
+  font-size: 1.8em;
+  border-radius: 0.5em;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+h3 {
+  background-color: lightgray;
+  margin-top: 0;
+  padding: 0.3em;
+  font-size: 1.5em;
+  border-radius: 0.5em;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
 }
 
 .colorButton {
@@ -73,11 +138,98 @@ body {
   background-color: violet;
 }
 
-/* Other Buttons */
-#otherControls{
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    text-align: center;
+#black {
+  background-color: black;
+}
 
+#lightBlue {
+  background-color: lightskyblue;
+}
+
+#orange {
+  background-color: orange;
+}
+
+#purple {
+  background-color: purple;
+}
+
+#white {
+  background-color: white;
+}
+
+
+/* Other Buttons */
+#otherControls {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  text-align: center;
+
+}
+
+#buttonDisplay {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+
+}
+
+.buttonStyle {
+  background-color: #002436;
+  border: solid transparent 1px;
+  border-radius: 16px;
+  border-width: 0 0 4px;
+  box-sizing: border-box;
+  color: #FFFFFF;
+  cursor: pointer;
+  display: inline-block;
+  font-family: din-round, sans-serif;
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: .8px;
+  line-height: 20px;
+  margin: 0;
+  outline: none;
+  overflow: visible;
+  padding: 13px 16px;
+  text-align: center;
+  text-transform: uppercase;
+  touch-action: manipulation;
+  transform: translateZ(0);
+  transition: filter .2s;
+  vertical-align: middle;
+  white-space: nowrap;
+  width: 100%;
+}
+
+.buttonStyle:after {
+  background-clip: padding-box;
+  background-color: #026a9d;
+  border: solid transparent;
+  border-radius: 16px;
+  border-width: 0 0 4px;
+  bottom: -4px;
+  content: "";
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  z-index: -1;
+}
+
+.buttonStyle:main,
+.buttonStyle:focus {
+  user-select: auto;
+}
+
+.buttonStyle:hover:not(:disabled) {
+  filter: brightness(1.1);
+  -webkit-filter: brightness(1.1);
+}
+
+.buttonStyle:disabled {
+  cursor: auto;
+  opacity: 0.6;
+  cursor: not-allowed;
 }
